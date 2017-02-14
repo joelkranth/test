@@ -1,7 +1,7 @@
 ![](../common/images/customer.logo.png)
 ---
 # ORACLE Cloud-Native DevOps workshop #
------
+
 ## Deploy SpringBoot demo application to Application Container Cloud Services using Developer Cloud Services ##
 
 ### About this tutorial ###
@@ -31,7 +31,6 @@ The Spring Boot sample application is a web application serving simple JSP pages
 
 This tutorial demonstrates how to:
 
-- create Oracle Developer Cloud Service project using existing external Git repository
 - configure build job for sample application
 - configure Application Container Cloud Service deployment in Developer Cloud Service
 - build and deploy sample application using Developer Cloud Service
@@ -42,25 +41,14 @@ This tutorial demonstrates how to:
 
 ----
 
-#### Create Oracle Developer Cloud Service project ####
+#### Open Oracle Developer Cloud Service Project ####
 
-Sign in to [https://cloud.oracle.com/sign-in](https://cloud.oracle.com/sign-in). First select your datacenter then provide the identity domain and credentials. After a successful login you will see your Dashboard. Find the Developer services tile and click the hamburger icon. In the dropdown menu click **Open Service Console**.
+[Sign in](../common/sign.in.to.oracle.cloud.md) to [https://cloud.oracle.com/sign-in](https://cloud.oracle.com/sign-in). First select your datacenter then provide the identity domain and credentials. After a successful login you will see your Dashboard. Find the Developer services tile and click the hamburger icon. In the dropdown menu click **Open Service Console**.
 ![](images/01.dashboard.png)
 
-Log in to Oracle Developer Cloud Services and create a new project.
+Select your Oracle Developer Cloud Service Project which was created using inital Git repository and contains Spring Boot sample application's sources.
 
-![alt text](images/02.new.project.png)
-
-Enter the name of the project and set the desired properties. Click **Next** and select *Initial Repository* as template.
-
-![](images/03.select.template.png)
-
-Click **Next** and on the Properties page select *Import existing repository*.
-Enter or copy the *https://github.com/oracle/cloud-native-devops-workshop.git* repository address.
-
-![](images/04.import.repository.png "Import external repository")
-
-Now click **Finish** to create the project and to clone the specified repository.
+![](images/20.open.devcs.project.png)
 
 ### Configure build job for Spring Boot sample application ###
 
@@ -95,7 +83,7 @@ Click on **Save** to update the new job configurations. To check the build job c
 
 ![alt text](images/10.build.artifacts.png "Build artifacts")
 
-Please note the build job contains an extra build step which packs the default artifact `springbootdemo-0.0.1.war` and `manifest.json` (ACCS descriptor from the *springboot-sample/src/resources* folder) into a zip archive. This archive is the desired format to deploy a Java application to ACCS.
+Please note the build job contains an extra build step which packs the default artifact `springbootdemo-0.0.1.war` and `manifest.json` (ACCS descriptor from the *springboot-sample/src/acc.resources* folder) into a zip archive. This archive is the desired format to deploy a Java application to ACCS.
 
 ### Configure Application Container Cloud service deployment ###
 
